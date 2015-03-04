@@ -24,7 +24,9 @@ include_recipe 'pxe_dust::installers'
 
 #write out a new pxedust.erb template
 remote_file "#{node['pxe_dust']['dir']}/chef-full.erb" do
-  source "https://raw.github.com/opscode/chef/master/lib/chef/knife/bootstrap/chef-full.erb"
+  #depreciated: https://raw.github.com/opscode/chef/master/lib/chef/knife/bootstrap/chef-full.erb
+  #replaced w/ omnibus installer
+  source "https://github.com/tfly-cookbooks/pxe_dust-cookbook/blob/master/recipes/bootstrap_template.rb"
 end
 
 # change URL from
